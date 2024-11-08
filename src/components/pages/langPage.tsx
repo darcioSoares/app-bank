@@ -1,12 +1,13 @@
-import Banner from "../Layouts/Banner";
-import SectionAndBanner from "../Layouts/SectionAndBanner";
-import SectionInformation from "../Layouts/SectionInformation";
-import SectionProduct from "../Layouts/SectionProduct";
+import Banner from "../Layouts/LandPage/Banner";
+import SectionAndBanner from "../Layouts/LandPage/SectionAndBanner";
+import SectionInformation from "../Layouts/LandPage/SectionInformation";
+import SectionProduct from "../Layouts/LandPage/SectionProduct";
 import Spacer from "../Layouts/Spacer";
 
 const LandPage = () => {
   return (
     <>
+    <Spacer />
     <SectionAndBanner />
     <Spacer />
     <SectionInformation />

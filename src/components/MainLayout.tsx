@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Layouts/Header';
-import Footer from './Layouts/Footer';
+import Header from './Layouts/LandPage/Header';
+import Footer from './Layouts/LandPage/Footer';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

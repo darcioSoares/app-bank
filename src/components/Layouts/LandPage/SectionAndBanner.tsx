@@ -1,4 +1,4 @@
-import people from "../../assets/people-ah7gd3.jpg"
+import people from "../../../assets/people-ah7gd3.jpg"
 
 const SectionAndBanner = () => {
     return (

@@ -1,5 +1,5 @@
-import peopleCard from '../../assets/people-as6hd9.jpg'
-import startupCard from '../../assets/startup.png'
+import peopleCard from '../../../assets/people-as6hd9.jpg'
+import startupCard from '../../../assets/startup.png'
 
 const SectionProduct = () => {
     const cards = [

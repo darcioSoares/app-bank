@@ -1,11 +1,42 @@
+import { useState } from 'react';
+//import axios from 'axios';
+
+import image from "../../assets/people-as6hd9.jpg"
+
 const Login = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = async (e : any) => {
+    e.preventDefault();
+
+    console.log(email, password)
+    // try {
+    //   // Faz a requisição de login
+    //   const response = await axios.post('/api/login', {
+    //     email,
+    //     password,
+    //   });
+
+    //   if (response.status === 200) {
+    //     setIsLoggedIn(true);
+    //     alert('Login bem-sucedido!');
+    //   }
+    // } catch (error) {
+    //   console.error('Erro no login:', error);
+    //   alert('Login falhou. Verifique as credenciais.');
+    // }
+  };
+
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
           {/* Imagem */}
           <div className="md:w-1/2">
             <img
-              src="https://picsum.photos/id/260/300/400"
+              src={image}
               alt="Login Illustration"
               className="w-full h-full object-cover"
             />
@@ -16,7 +47,7 @@ const Login = () => {
             <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
               Login
             </h2>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleLogin}>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium">
                   Email
@@ -27,6 +58,8 @@ const Login = () => {
                   className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   placeholder="Digite seu email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -39,6 +72,8 @@ const Login = () => {
                   className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   placeholder="Digite sua senha"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <button
@@ -49,7 +84,7 @@ const Login = () => {
               </button>
             </form>
             <p className="mt-4 text-center text-sm text-gray-600">
-              Não tem uma conta?{' '}
+              Não tem uma conta?
               <a href="#" className="text-indigo-600 hover:underline">
                 Cadastre-se
               </a>

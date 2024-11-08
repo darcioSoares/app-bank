@@ -1,4 +1,4 @@
-import banner from '../../assets/technology_finances.png'
+import banner from '../../../assets/technology_finances.png'
 
 const Banner = () => {
   return (
