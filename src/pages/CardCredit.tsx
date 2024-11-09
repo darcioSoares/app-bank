@@ -1,4 +1,4 @@
-import '../../css/cardCredit.css';
+import '../css/cardCredit.css';
 
 const CardCredit = () => {
     return (

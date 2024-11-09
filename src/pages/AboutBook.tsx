@@ -1,4 +1,4 @@
-import '../../css/aboutBook.css'
+import '../css/aboutBook.css'
 
 const AboutBook = () => {
     return (

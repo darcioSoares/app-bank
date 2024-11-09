@@ -1,7 +1,7 @@
 import { useState } from 'react';
 //import axios from 'axios';
 
-import image from "../../assets/people-as6hd9.jpg"
+import image from "../assets/people-as6hd9.jpg"
 
 const Login = () => {
 
