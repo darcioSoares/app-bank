@@ -1,13 +1,21 @@
 import { useState } from 'react';
+import Eye from '../../src/components/Utility/Eye'
 //import axios from 'axios';
 
 import image from "../assets/people-as6hd9.jpg"
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const eventEye = (status : boolean ) => {
+    setIsPasswordVisible((prev) => !prev);
+     return status
+  }
 
   const handleLogin = async (e : any) => {
     e.preventDefault();
@@ -66,15 +74,16 @@ const Login = () => {
                 <label htmlFor="password" className="block text-sm font-medium">
                   Senha
                 </label>
+                <div className="flex items-center">
                 <input
-                  type="password"
+                  type={isPasswordVisible ? "text" : "password"}
                   id="password"
                   className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   placeholder="Digite sua senha"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                />
+                /> <Eye event={() => eventEye(false)} /> </div>
               </div>
               <button
                 type="submit"
@@ -85,9 +94,9 @@ const Login = () => {
             </form>
             <p className="mt-4 text-center text-sm text-gray-600">
               Não tem uma conta?
-              <a href="#" className="text-indigo-600 hover:underline">
-                Cadastre-se
-              </a>
+              <Link to="/register" className="text-indigo-600 hover:underline">
+              Cadastre-se
+            </Link>
             </p>
           </div>
         </div>
