@@ -9,6 +9,7 @@ const Eye: React.FC<EyeProps> = ({ event }) => {
 
   const toggleEye = () => {
     setEye(!eye);  
+    console.log('eye')
     event(); // Chama a função passada pelo pai
   };
 

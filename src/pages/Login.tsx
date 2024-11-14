@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Eye from '../../src/components/Utility/Eye'
 //import axios from 'axios';
-
 import image from "../assets/people-as6hd9.jpg"
 import { Link } from 'react-router-dom';
 
@@ -12,9 +11,10 @@ const Login = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const eventEye = (status : boolean ) => {
+  const eventEye = () => {
     setIsPasswordVisible((prev) => !prev);
-     return status
+    console.log('login')
+    //return status
   }
 
   const handleLogin = async (e : any) => {
@@ -40,8 +40,7 @@ const Login = () => {
 
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
-          {/* Imagem */}
+        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full"> 
           <div className="md:w-1/2">
             <img
               src={image}
@@ -50,7 +49,6 @@ const Login = () => {
             />
           </div>
   
-          {/* Formulário de Login */}
           <div className="md:w-1/2 p-8 flex flex-col justify-center">
             <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
               Login
@@ -83,7 +81,9 @@ const Login = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                /> <Eye event={() => eventEye(false)} /> </div>
+                /> 
+                  <Eye event={eventEye} />
+                </div>
               </div>
               <button
                 type="submit"
